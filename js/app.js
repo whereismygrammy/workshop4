@@ -8,7 +8,7 @@ $( document ).ready(function() {
             data: "",
             dataType: "json",
         }).done(function(books){
-            var bookList = $("book-list");
+            var bookList = $("#book-list");
             renderBookList(bookList, books);
         }).fail(function(xhr,status,err){
             console.log("Err", xhr,status,err);
@@ -16,7 +16,28 @@ $( document ).ready(function() {
     }
     
     function renderBookList(renderingPoint, arrBooks){
-        console.log(arrBooks)
+        renderingPoint.empty();
+        
+        for(var i = 0; i < arrBooks.length; i++){
+            var titleDiv = getTitleDiv(arrBooks[i]);
+            var desctiprionDiv = getDesctiprionDiv(arrBooks[i]);
+
+            renderingPoint.append(titleDiv);
+            renderingPoint.append(desctiprionDiv);
+        }
     }
+    
+    function getTitleDiv(bookObj){
+        var titleDiv = $("<div class='title'>");
+        titleDiv.text(bookObj.title);
+        
+        return titleDiv;
+    }
+    
+    function getDesctiprionDiv(){
+        var decriptionDiv  = $("<div class='decription'>");
+        return decriptionDiv;
+    }
+    
     
 });
