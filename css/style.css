@@ -6,3 +6,9 @@
     background-color: lightpink;
     font-size: 12px;
 }
+
+.delbook{
+    background-color: red;
+    font-size: 12px;
+    border: 1px;
+}
