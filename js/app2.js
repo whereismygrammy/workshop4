@@ -117,7 +117,7 @@ $( document ).ready(function() {
             url: url,
             type: method,
             data: data,
-            contentType:"aplication/json; charset=utf-8",
+            contentType:"application/json; charset=utf-8",
             dataType: "json",
         }).done(handleSuccessFn).fail(function(xhr,status,err){
             console.log("Err", xhr,status,err);
