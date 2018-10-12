@@ -17,7 +17,7 @@ $( document ).ready(function() {
             renderBookList(bookList, books);
     }
     
-    genericSendRequest("http://localhost:8282/books", "GET", "", renderBookListProxy);
+    genericSendRequest("http://localhost:8080/books", "GET", "", renderBookListProxy);
 
     }
 
@@ -60,7 +60,7 @@ $( document ).ready(function() {
             renderDescription(descriptionRenderingPoint, book);
         }
         
-    genericSendRequest("http://localhost:8282/books/" + bookId, "GET", "", renderDescriptionProxy);
+    genericSendRequest("http://localhost:8080/books/" + bookId, "GET", "", renderDescriptionProxy);
 
     }
     
@@ -96,7 +96,7 @@ $( document ).ready(function() {
             publisher: this.elements.publisher.value,
         }
         
-        genericSendRequest("http://localhost:8282/books", "POST", JSON.stringify(newBook), refreshBookList);
+        genericSendRequest("http://localhost:8080/books", "POST", JSON.stringify(newBook), refreshBookList);
 
         event.preventDefault();
         return false;
@@ -108,7 +108,7 @@ $( document ).ready(function() {
         event.stopPropagation();
     
 
-        genericSendRequest("http://localhost:8282/books/" + bookId, "DELETE", "", refreshBookList);
+        genericSendRequest("http://localhost:8080/books/" + bookId, "DELETE", "", refreshBookList);
     }
     
     

@@ -13,7 +13,7 @@ $( document ).ready(function() {
     
     function refreshBookList(){
         $.ajax({
-            url: "http://localhost:8282/books",
+            url: "http://localhost:8080/books",
             type: "GET",
             data: "",
             dataType: "json",
@@ -60,7 +60,7 @@ $( document ).ready(function() {
         var descriptionRenderingPoint = $(this).next("div.description");
         
         $.ajax({
-            url: "http://localhost:8282/books/" + bookId,
+            url: "http://localhost:8080/books/" + bookId,
             type: "GET",
             data: "",
             dataType: "json",
@@ -104,7 +104,7 @@ $( document ).ready(function() {
         }
         
         $.ajax({
-            url: "http://localhost:8282/books/",
+            url: "http://localhost:8080/books/",
             type: "POST",
             data: JSON.stringify(newBook),
             contentType:"aplication/json; charset=utf-8",
@@ -125,7 +125,7 @@ $( document ).ready(function() {
         event.stopPropagation();
     
         $.ajax({
-            url: "http://localhost:8282/books/" + bookId,
+            url: "http://localhost:8080/books/" + bookId,
             type: "DELETE",
             data: "",
             contentType:"aplication/json; charset=utf-8",
